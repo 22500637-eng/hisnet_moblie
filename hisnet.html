@@ -6,6 +6,24 @@
     <title>HISNet 메인</title>
     <link rel="stylesheet" href="css/hisnet.css">
     <script src="js/hisnet.js" defer></script>
+    <style>
+        .notice-box p {
+    font-size: 12px;        /* 기본 글자 크기 */
+    line-height: 1.3;       /* 줄 간격 살짝 좁힘 */
+    word-break: keep-all;   /* 단어가 박스 밖으로 나가는 것 방지 */
+}
+
+/* 모바일 화면에서 더 작게 */
+@media (max-width: 480px) {
+    .notice-box p {
+        font-size: 10px;    /* 모바일에서 더 작은 크기 */
+    }
+    .notice-box {
+        padding: 8px;       /* 박스 안쪽 여백 줄이기 */
+    }
+}
+
+    </style>
 
 </head>
 <body>
