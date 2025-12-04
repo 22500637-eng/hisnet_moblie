@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #f0f2f5;
+}
+
+.nav {
+    background-color: #0A1A3C;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 25px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.hero-form {
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+
+    padding: 30px;
+    border-radius: 15px;
+
+    text-align: center;
+    box-shadow: 0 0 12px black;
+}
+
+.hero-form h1 {
+    font-size: 32px;
+    color: #0A1A3C;
+    margin-bottom: 10px;
+}
+
+.hero-form p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.img-box {
+    width: 100%;
+    height: 400px;
+
+    background-color: #c0c7d6;
+    border: 3px solid #0A1A3C;
+
+    border-radius: 10px;
+    margin: 20px auto;
+}
+.formButton {
+    font-size:10px;
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+body,html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+/*
+상상랩 버튼
+*/
+#labButton{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 70%;
+    margin: 3% auto;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 239);
+}
+#title{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+#labicon{
+    width: 15px;
+    height: 15px;
+}
+
+/*상상랩1 시간 테이블*/
+#t1{
+    width:75%;
+    padding: 10px; /*표 공백*/
+    margin: 0% auto;
+    border-collapse: collapse; /*셀 테두리를 하나로 합침*/
+    table-layout: fixed;
+}
+#t1 th,#t1 td{
+    border: 1px solid #000;
+    padding: 1px;
+    height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box; /*패딩과 테두리가 너비/높이에 포함되도록 설정*/
+}
+#t1 thead th{
+    background-attachment: #000;
+    color:#333;
+    font-size:13px;
+    height: 50px; /*행의 높이*/
+    font-weight: normal;
+}
+#t1 thead th:first-child {
+    width: 10%; 
+    background-color: #e3e8f8; 
+    color: #1a4d9e; /* 짙은 파란색 텍스트 */
+    font-weight: bold;
+    font-size: 14px;
+}
+#t1 tbody th:first-child {
+    width: 15%;
+    background-color: #f2f2f2;
+    color: #555;
+    font-weight: 450;
+    font-size: 10px;
+}
+
+/*상상랩 02*/
+#t2{
+    width:75%;
+    padding: 10px; /*표 공백*/
+    margin: 0% auto;
+    border-collapse: collapse; /*셀 테두리를 하나로 합침*/
+    table-layout: fixed;
+}
+#t2 th,#t2 td{
+    border: 1px solid #000;
+    padding: 1px;
+    height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box; /*패딩과 테두리가 너비/높이에 포함되도록 설정*/
+}
+#t2 thead th{
+    background-attachment: #000;
+    color:#333;
+    font-size:13px;
+    height: 50px; /*행의 높이*/
+    font-weight: normal;
+}
+#t2 thead th:first-child {
+    width: 10%; 
+    background-color: #e3e8f8; 
+    color: #1a4d9e; /* 짙은 파란색 텍스트 */
+    font-weight: bold;
+    font-size: 14px;
+}
+#t2 tbody th:first-child {
+    width: 10%;
+    background-color: #f2f2f2;
+    color: #555;
+    font-weight: 450;
+    font-size: 10px;
+}
+
+/*상상랩 03*/
+#t3{
+    width:75%;
+    padding: 10px; /*표 공백*/
+    margin: 0% auto;
+    border-collapse: collapse; /*셀 테두리를 하나로 합침*/
+    table-layout: fixed;
+}
+#t3 th,#t3 td{
+    border: 1px solid #000;
+    padding: 1px;
+    height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box; /*패딩과 테두리가 너비/높이에 포함되도록 설정*/
+}
+#t3 thead th{
+    background-attachment: #000;
+    color:#333;
+    font-size:13px;
+    height: 50px; /*행의 높이*/
+    font-weight: normal;
+}
+#t3 thead th:first-child {
+    width: 10%; 
+    background-color: #e3e8f8; 
+    color: #1a4d9e; /* 짙은 파란색 텍스트 */
+    font-weight: bold;
+    font-size: 14px;
+}
+#t3 tbody th:first-child {
+    width: 10%;
+    background-color: #f2f2f2;
+    color: #555;
+    font-weight: 450;
+    font-size: 10px;
+}
+
+/*예약버튼*/
+#reserve{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: 3% auto;
+    padding:20px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 239);;
+}
+
+/*추가된 함수*/
+/* 예약된 칸을 표시하는 스타일 */
+.reserved {
+    background-color: red !important; /* !important를 사용하여 다른 셀 스타일보다 우선 적용 */
+    color: white;
+}
+
+/* 선택된 칸을 표시하는 스타일 (선택만 된 상태) */
+.selected {
+    background-color: #ffcccc; /* 예약 대기 상태를 나타내는 연한 빨간색 */
+    cursor: pointer; /* 클릭 가능한 시각적 피드백 */
+}
+
+/* 예약 목록 테이블 스타일 */
+#reservation-list th, #reservation-list td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+/* 예약 취소 버튼 스타일 */
+.cancel-btn {
+    background-color: #f44336; /* 빨간색 */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+    /*
+    식당메뉴
+    */
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  padding: 16px;
+  background-color: #e9f0ff;  /* 연한 파란 배경 */
+}
+
+/* 가운데 카드로 모으기 */
+.wrapper {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 15px;
+  text-align: center;
+  color: #1f4f8f;
+}
+
+/* 탭 버튼 영역 */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  flex: 1;
+  padding: 8px 0;
+  font-size: 14px;
+  border-radius: 999px;
+  border: 1px solid #9bb3e0;
+  background: #fff;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #2467b3;
+  color: #fff;
+  border-color: #2467b3;
+  font-weight: 600;
+}
+
+/* 날짜 텍스트 */
+.date {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+/* 카드 박스 */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 12px;
+  overflow-x: auto;           /* 표가 넓으면 가로 스크롤 */
+}
+
+/* 표 스타일 */
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 360px;           /* 너무 좁아지지 않게 */
+  margin-bottom: 8px;
+}
+
+.caption {
+  text-align: left;
+  font-weight: 600;
+  padding: 4px 0 8px 0;
+}
+
+.menu-table th,
+.menu-table td {
+  border: 1px solid #dde3f3;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.menu-table thead th {
+  background: #f3f6ff;
+}
+
+.en {
+  font-size: 11px;
+  color: #777;
+}

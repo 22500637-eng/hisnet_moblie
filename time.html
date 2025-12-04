@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hisnet 시간표/강의계획서</title>
+    <style>
+      #timetableTitle{
+        width: 15% ;
+        text-align: center;
+        margin: 3% auto;
+        border: 1px solid black;
+        border-radius: 3px;
+        background-color: rgb(217, 233, 249);
+        text-align: center;
+        color:white;
+        text-shadow: 2px black; /* 글자 테두리 */
+        color: white; /* 내부 글자색 */
+
+        }
+      /* ===== 테이블 디자인 개선 ===== */
+
+      table {
+        width: 100%;
+        max-width: 400px;   /* 모바일 기준 적절한 폭 */
+        margin: 20px auto;
+        border-collapse: collapse;
+        font-size: 13px;
+        background: white;
+        table-layout: fixed;
+        border-radius: 5px;
+
+      }
+
+      th {
+        background: #4a90e2;   /* 블루 계열 */
+        color: white;
+        padding: 10px 5px;
+        border: 1px solid #3b7ac4;
+        font-weight: 600;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 10px 5px;
+        text-align: center;
+        font-size: 8px;
+        background: #fff;
+      }
+
+      /* 짝수 줄 은은한 줄무늬 */
+      tr:nth-child(even) td {
+        background: #f9f9f9;
+      }
+
+      /* hover 시 약한 강조 */
+      td:hover {
+        background: #eef5ff;
+        cursor: pointer;
+      }
+
+
+      td {
+        height: 30px; /* 표의 칸 높이를 통일 */
+      }
+
+      /*모달 기본 설정 */
+      #popup {
+        display: none;       /* 처음엔 안 보임 */
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        justify-content: center;
+        align-items: center;
+      }
+
+        #popupContent {  /*팝업이 떴을 때*/
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 400px;
+      }
+
+        #scrollArea {
+        max-height: 70vh;     /* 화면의 70%만 높이로 */
+        overflow-y: auto;     /* 넘치면 스크롤 */
+      }
+
+        #popupImg {
+        width: 100%;
+        display: block;
+      }
+  </style>
+  <link rel="stylesheet" href="css/hisnet.css">
+  <script src="js/time.js" defer></script>
+
+</head>
+<body>
+    <header class="nav">
+        <img src="css/HGU.png" alt="사진" width="25">
+        <div class="logo">HISNet</div>
+
+        <form name="form">
+            <button type="button" class="formButton" name="home">홈</button>
+            <button type="button" class="formButton" name="meal">식단 메뉴</button>
+            <button type="button" class="formButton" name="time">시간표/강의계획서</button>
+            <button type="button" class="formButton" name="lab">상상랩</button>
+        </form>
+    </header>
+
+  <h2 id="timetableTitle">시간표</h2>
+  <table id="timetable">
+  <thead>
+      <tr>
+        <th>월</th>
+        <th>화</th>
+        <th>수</th>
+        <th>목</th>
+        <th>금</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  </table>
+
+  <!--팝업 모달 -->
+  <div id="popup">
+    <div id="popupContent">
+      <h3 id="popupTitle"></h3>
+  <!--스크롤 하기 위해 설정해둔 곳-->
+    <div id="scrollArea">
+      <img id="popupImg">
+    </div>
+
+      <br>
+      <button id="closeBtn">닫기</button>
+    </div>
+  </div>
+
+    <script>
+      const timetable = [  //표 안에 들어갈 데이터 저장
+        ["자바스크립트", "  ", "  ", "자바스크립트", "  "], //tr 하나를 만들고 그 안에 td 다섯개를 넣는다.
+        ["기독교 세계관", "  ", "한동인성교육", "기독교 세계관", "  "],
+        ["  ", "  ", "  ", "  ", "  "],
+        ["EF", "영화의 이해", "채플", "EF", "영화의 이해"],
+        ["  ", "한국사회의 구조와 문화의 이해", "채플", "  ", "  "],
+        ["  ", "한국사회의 구조와 문화의 이해", "채플", "  ", "영상의 이해"],
+        ["  ", "  ", "  ", "  ", "영상의 이해"]
+      ];
+
+    const photos = { //사진 저장 
+      "자바스크립트": "css/javascript2.png",
+      "기독교 세계관": "css/worldview.png",
+      "EF": "css/EF.png",
+      "영화의 이해": "css/movie.png",
+      "한국사회의 구조와 문화의 이해": "css/Korea.png",
+      "한동인성교육" : "css/Handong.png",
+      "채플" : "css/chaple.png",
+      "영상의 이해" : "css/video.png"
+    };
+
+    const table = document.getElementById("timetable");  
+    const popup = document.getElementById("popup");
+    const popupImg = document.getElementById("popupImg");
+    const popupTitle = document.getElementById("popupTitle");
+
+    // 시간표 생성 후 클릭하면 팝업 띄우기
+    timetable.forEach(row => {
+      const tr = document.createElement("tr");
+
+      row.forEach(subject => {
+        const td = document.createElement("td");
+        td.textContent = subject;
+
+        td.addEventListener("click", () => {  //addEventListener를 사용해서 click을 눌렀을 때, 사진이 나올 수 있도록 설정해두기.
+          popup.style.display = "flex";
+          popupTitle.textContent = `${subject}`; //사진 띄웠을 때, 나오는 사진 이름 설정. 
+          popupImg.src = photos[subject] || "default.jpg";
+        });
+
+        tr.appendChild(td);  //td를 tr에 넣는다. 
+      });
+
+      table.appendChild(tr); //그 tr을 table에 넣는다. 
+    });
+
+      // 닫기 버튼 눌렀을 때 닫히기
+    document.getElementById("closeBtn").addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+
+
+    // 배경 클릭해도 닫히게 만들기
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) popup.style.display = "none";
+    });
+
+  </script>
+
+</body>
+</html>

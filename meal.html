@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HISNet 식단표</title>
+    <link rel="stylesheet" href="css/hisnet.css">
+    <script src="js/meal.js" defer></script>
+
+</head>
+<body>
+
+    <header class="nav">
+        <img src="css/HGU.png" alt="사진" width="25">
+        <div class="logo">HISNet</div>
+
+        <form name="form">
+            <button type="button" class="formButton" name="home">홈</button>
+            <button type="button" class="formButton" name="meal">식단 메뉴</button>
+            <button type="button" class="formButton" name="time">시간표/강의계획서</button>
+            <button type="button" class="formButton" name="lab">상상랩</button>
+        </form>
+    </header>
+
+    <div class="wrapper">
+    <h1 class="title">오늘의 식단</h1>
+
+    <!-- 식당 탭 버튼 -->
+    <div class="tabs">
+      <button class="tab active" data-cafe="student">학생식당</button>
+      <button class="tab" data-cafe="moms">맘스키친</button>
+      <button class="tab" data-cafe="lounge">한동라운지</button>
+    </div>
+
+    <!-- 날짜 -->
+    <p class="date">11월 24일 월요일</p>
+
+    <!-- 카드 박스 안에 식단 내용 -->
+    <div class="card">
+
+      <!-- 1) 학생식당 -->
+      <table class="menu-table" data-cafe="student">
+        <caption class="caption">학생식당 메뉴</caption>
+        <thead>
+          <tr>
+            <th scope="col">구분</th>
+            <th scope="col">조식<br><span class="en">(breakfast)</span></th>
+            <th scope="col">중식<br><span class="en">(lunch)</span></th>
+            <th scope="col">석식<br><span class="en">(dinner)</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 든든한동 -->
+          <tr>
+            <th scope="row">든든한동</th>
+            <td>
+              -원산지: 메뉴게시판 참조-<br>
+              크래미야채죽<br>
+              동그랑땡양념조림<br>
+              감자채볶음<br>
+              상추무침<br>
+              깍두기
+            </td>
+            <td>
+              -원산지: 메뉴게시판 참조-<br>
+              돼지고기떡볶음<br>
+              쌀밥<br>
+              미역국<br>
+              구운어묵볶음<br>
+              콩나물겨자냉채무침<br>
+              김치
+            </td>
+            <td>
+              -원산지: 메뉴게시판 참조-<br>
+              굴소스야채볶음밥<br>
+              우동국물<br>
+              미트볼야채조림<br>
+              브로콜리&초장<br>
+              단무지
+            </td>
+          </tr>
+
+          <!-- H:plate -->
+          <tr>
+            <th scope="row">H:plate</th>
+            <td colspan="3">
+              -원산지: 메뉴게시판 참조-<br>
+              등심돈까스 / 양념돈까스 / 우삼겹토마토파스타
+            </td>
+          </tr>
+
+          <!-- asian market -->
+          <tr>
+            <th scope="row">asian market</th>
+            <td colspan="3">
+              -원산지: 메뉴게시판 참조-<br>
+              라면 / 마요덮밥
+            </td>
+          </tr>
+
+          <!-- han's deli -->
+          <tr>
+            <th scope="row">han's deli</th>
+            <td colspan="3">
+              -원산지: 메뉴게시판 참조-<br>
+              찜닭
+            </td>
+          </tr>
+
+          <!-- 따스한동 -->
+          <tr>
+            <th scope="row">따스한동</th>
+            <td colspan="3">
+              -원산지: 메뉴게시판 참조-<br>
+              돼지고기김치찌개 / 삼겹숙주덮밥
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 2) 맘스키친 -->
+      <table class="menu-table" data-cafe="moms" hidden>
+        <caption class="caption">맘스키친 메뉴</caption>
+        <thead>
+          <tr>
+            <th scope="col">구분</th>
+            <th scope="col">조식<br><span class="en">(breakfast)</span></th>
+            <th scope="col">중식<br><span class="en">(lunch)</span></th>
+            <th scope="col">석식<br><span class="en">(dinner)</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">정식</th>
+            <td>
+              식빵 / 모닝빵 / 단호박죽<br>
+              후레이크 / 바나나<br>
+              스크램블 / 베이컨<br>
+              요거트 / 우유 / 오렌지주스<br>
+              양배추샐러드 / 키위드레싱
+            </td>
+            <td>
+              소불고기뚝배기<br>
+              떡만두국<br>
+              치즈돈까스<br>
+              현미밥<br>
+              김치<br>
+              양배추샐러드 / 키위드레싱
+            </td>
+            <td>
+              돼지고기된장찌개<br>
+              닭불고기덮밥 / 김치국<br>
+              치즈돈까스<br>
+              현미밥<br>
+              김치<br>
+              양배추샐러드 / 키위드레싱
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 3) 한동라운지 (교직원 식당 열은 제외하고 일반식당만) -->
+      <table class="menu-table" data-cafe="lounge" hidden>
+        <caption class="caption">한동라운지 일반식당 메뉴</caption>
+        <thead>
+          <tr>
+            <th scope="col">구분</th>
+            <th scope="col">조식<br><span class="en">(breakfast)</span></th>
+            <th scope="col">중식<br><span class="en">(lunch)</span></th>
+            <th scope="col">석식<br><span class="en">(dinner)</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">일반식당</th>
+            <td>
+              조식 미운영
+            </td>
+            <td>
+              &lt;원산지: 게시판 참조&gt;<br>
+              오색나물비빔밥<br>
+              어묵국<br>
+              야채고로케<br>
+              오이무침<br>
+              깍두기<br>
+              샐러드 &amp; 드레싱
+            </td>
+            <td>
+              &lt;원산지: 게시판 참조&gt;<br>
+              짜장면 / 짜장면곱배기<br>
+              홍짬뽕<br>
+              찹쌀탕수육(소)<br>
+              세트A(짜장+홍짬뽕+탕수육)<br>
+              세트B(짜장+탕수육)<br>
+              세트C(홍짬뽕+탕수육)<br>
+              돼지국밥<br>
+              순두부찌개<br>
+              부대찌개<br>
+              닭강정
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <script src="js/meal.js"></script>
+
+</body>
+</html>
