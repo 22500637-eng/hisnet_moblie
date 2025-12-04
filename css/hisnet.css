@@ -1,4 +1,4 @@
-body {
+ body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background-color: #f0f2f5;
@@ -93,12 +93,12 @@ body,html{
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 15px;
+    font-size: 10px;
     font-weight: bold;
 }
 #labicon{
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
 }
 
 /*상상랩1 시간 테이블*/
@@ -120,7 +120,7 @@ body,html{
 #t1 thead th{
     background-attachment: #000;
     color:#333;
-    font-size:13px;
+    font-size:8px;
     height: 50px; /*행의 높이*/
     font-weight: normal;
 }
@@ -129,14 +129,14 @@ body,html{
     background-color: #e3e8f8; 
     color: #1a4d9e; /* 짙은 파란색 텍스트 */
     font-weight: bold;
-    font-size: 14px;
+    font-size: 10px;
 }
 #t1 tbody th:first-child {
     width: 15%;
     background-color: #f2f2f2;
     color: #555;
     font-weight: 450;
-    font-size: 10px;
+    font-size: 8px;
 }
 
 /*상상랩 02*/
@@ -158,7 +158,7 @@ body,html{
 #t2 thead th{
     background-attachment: #000;
     color:#333;
-    font-size:13px;
+    font-size:8px;
     height: 50px; /*행의 높이*/
     font-weight: normal;
 }
@@ -167,14 +167,14 @@ body,html{
     background-color: #e3e8f8; 
     color: #1a4d9e; /* 짙은 파란색 텍스트 */
     font-weight: bold;
-    font-size: 14px;
+    font-size: 10px;
 }
 #t2 tbody th:first-child {
     width: 10%;
     background-color: #f2f2f2;
     color: #555;
     font-weight: 450;
-    font-size: 10px;
+    font-size: 8px;
 }
 
 /*상상랩 03*/
@@ -196,7 +196,7 @@ body,html{
 #t3 thead th{
     background-attachment: #000;
     color:#333;
-    font-size:13px;
+    font-size:8px;
     height: 50px; /*행의 높이*/
     font-weight: normal;
 }
@@ -205,14 +205,14 @@ body,html{
     background-color: #e3e8f8; 
     color: #1a4d9e; /* 짙은 파란색 텍스트 */
     font-weight: bold;
-    font-size: 14px;
+    font-size: 10px;
 }
 #t3 tbody th:first-child {
     width: 10%;
     background-color: #f2f2f2;
     color: #555;
     font-weight: 450;
-    font-size: 10px;
+    font-size: 8px;
 }
 
 /*예약버튼*/
