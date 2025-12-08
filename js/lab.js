@@ -232,6 +232,7 @@ function handleCancel(id) {
         updateReservationList();
         
         alert('예약이 취소되었습니다');
+        reservationMessage.innerHTML='상상랩 예약 대기 중입니다.'
     }
 }
 
